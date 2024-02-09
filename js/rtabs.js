@@ -1,17 +1,17 @@
 (function($) {
  $.fn.rTabs = function(options) {
-  //暺䁅�滚��
+  //默認值
   var defaultVal =  {
-  btnClass:'.j-tab-nav', /*��厰�閧���蝝鋴lass*/
-  conClass:'.j-tab-con', /*�批捆����蝝鋴lass*/
-  bind:'hover', /*鈭衤辣���彍 click,hover*/
-  animation:'0', /*��閧𧞄�䲮��� left,up,fadein,0 �箇�∪�閧𧞄*/
-  speed:300,  /*��閧𧞄�见�閖�笔漲*/
-  delay:200, /*Tab撱園�脤�笔漲*/
-  auto:false, /*�糓�炏��见�蠘䌊��閖�贝�� true,false*/
-  autoSpeed:3000 /*�䌊��閖�贝�屸�笔漲*/
+  btnClass:'.j-tab-nav', /*按鈕的父級Class*/
+  conClass:'.j-tab-con', /*內容的父級Class*/
+  bind:'hover', /*事件參數 click,hover*/
+  animation:'0', /*動畫方向 left,up,fadein,0 為無動畫*/
+  speed:300,  /*動畫運動速度*/
+  delay:200, /*Tab延遲速度*/
+  auto:false, /*是否開啟自動運行 true,false*/
+  autoSpeed:3000 /*自動運行速度*/
   };
-  //�典�霈𢠃��
+  //全局變量
   var obj = $.extend(defaultVal, options),
   evt = obj.bind,
   btn = $(this).find(obj.btnClass),
@@ -25,7 +25,7 @@
   i = 0,
   len,t,timer;
   return this.each(function() {
-  //�ế�𪃾��閧𧞄�䲮���
+  //判斷動畫方向
   function judgeAnim() {
    var w = i * conWidth,
    h = i * conHeight;
@@ -45,7 +45,7 @@
    break;
    }
   }
-  //�ế�𪃾鈭衤辣憿𧼮��
+  //判斷事件類型
   if(evt == "hover") {
    btn.children().hover(function() {
     var j = $(this).index();
@@ -63,7 +63,7 @@
      judgeAnim();
     })
    }
-   //�䌊��閖�贝��
+   //自動運行
    function startRun() {
     t = setInterval(function() {
      i++;
@@ -80,7 +80,7 @@
      judgeAnim();
     },obj.autoSpeed)
    }
-   //憒���𡏭䌊��閖�贝�屸�见���諹矽�鍂�䌊��閖�贝��遆�彍
+   //如果自動運行開啟，調用自動運行函數
    if(obj.auto) {
     $(this).hover(function() {
      clearInterval(t);
