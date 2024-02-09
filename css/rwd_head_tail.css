@@ -1,0 +1,296 @@
+@charset "utf-8";
+/* CSS Document */
+
+div.ltnheader * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family:"微軟正黑體";
+}
+div.ltnheader {
+	width: 100%;
+	overflow: hidden;
+	border-bottom: 3px solid #777;
+	background-color: #f7f7f7;
+	position: fixed;
+	top: 0;
+	/*全站統一 z-index:5;*/
+	z-index: 5;
+}
+div.ltnheader .Hcon { display: flex;
+	max-width: 1260px;
+	height: 90px;
+	margin: 0 auto;
+}
+/* for header position */
+.headerP_high {
+    width:100%;
+    height:162px;
+}
+@media screen and (min-width:829px) {
+    .headerP_high { height:90px; }
+}
+/* for pad and mobile */
+div.ltnheader .Hcon .ltnSearch,
+div.ltnheader .Hcon .nav_bar {
+    display:none;
+}
+
+@media screen and (max-width:1100px){
+    body#ltnRWD div.ltnheader { border-bottom: none; }
+    body#ltnRWD div.ltnheader .Hcon { display:block; text-align: center; background-color: #fff; }
+}
+
+/* -------------------- *\
+          LOGO
+\* -------------------- */
+div.ltnheader .Hcon .logo {
+	float: left;
+	width: 157px;
+	height: 90px;
+	margin:0px 10px 0px 8px;
+}
+div.ltnheader .Hcon .logo img {
+	width: 100%;
+	height: auto;
+}
+div.ltnheader .Hcon a.logo_B { display:block; margin: 10px 0 0; }
+/* for pad and mobile */
+div.ltnheader .Hcon .logo a.logo_S { display: none; }
+
+@media screen and (max-width:1100px){
+    body#ltnRWD div.ltnheader .Hcon .logo { height:45px; margin:0 auto; float: initial; }
+    body#ltnRWD div.ltnheader .Hcon .logo a.logo_B { display: none; }
+    body#ltnRWD div.ltnheader .Hcon .logo a.logo_S { display: inline-block; width: 115px; line-height: 0; }
+    body#ltnRWD div.ltnheader .Hcon .logo a.logo_S img { margin: 7px 0 0; }
+}
+
+/* -------------------- *\
+         分類選單
+\* -------------------- */
+div.ltnheader .useMobi { width: calc(100% - 240px - 175px); display:flex; }
+div.ltnheader .useMobi ul { width:100%;	margin-top: 22px; }
+div.ltnheader .useMobi ul li {
+	float: left;
+	margin-right: 17px;
+	position: relative;
+}
+div.ltnheader .useMobi ul li a {
+	display: inline-block;
+	width: 38px;
+	font-size: 18px;
+	line-height: 1.6;
+}
+div.ltnheader .useMobi ul li.li_TT a /*TT*/{ width:auto; letter-spacing: -0.01rem; }
+div.ltnheader .useMobi ul li a:hover {
+    color:#c00;
+}
+/* 新頻道 new動圖（PC only） */
+div.ltnheader .useMobi .newChannel {
+    width:30px;
+    position:absolute;
+    top:-19px;
+    left:3px;
+}
+
+@media screen and (max-width:1260px){
+    body#ltnRWD div.ltnheader .useMobi ul li { margin-right:12px; }
+    body#ltnRWD div.ltnheader .useMobi ul li:last-child { margin-right:0px; }
+}
+@media screen and (max-width:1100px){
+    body#ltnRWD div.ltnheader .useMobi { display: block; width: 100%; height: 50px; overflow-x: scroll; overflow-y: hidden; background-color: #eee; }
+    body#ltnRWD div.ltnheader .useMobi ul { display: block; width:1380px; height: 50px; margin: 0; }
+    body#ltnRWD div.ltnheader .useMobi ul li{
+        margin: 0;
+        padding: 0 7px;
+    }
+    body#ltnRWD div.ltnheader .useMobi ul li a {
+        line-height:50px;
+    }
+}
+
+/* -------------------- *\
+      WEATHER + ICON
+\* -------------------- */
+.Hcon .function {
+    float: right;
+    padding-right: 10px;
+    margin-top: 8px;
+    width: 240px;
+    position: relative;
+}
+/*----- WEATHER -----*/
+.Hcon .function .weather {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    float: right;
+}
+.Hcon .function .weather img {
+    display: inline-block;
+    width: 30px;
+    margin-right: 7px;
+}
+.Hcon .function .weather p {
+    display:inline-block;
+    font-size: 14px;
+    line-height: 1.5;
+}
+/*----- ICON GROUP -----*/
+.Hcon .function .icon {
+    /*float: right;*/
+    clear: both;
+}
+.Hcon .function .icon a {
+    width: 32px;
+    height: 32px;
+    float: left;
+    color:#555;
+    border-radius: 50%;
+    border: 1px solid #555;
+    background-repeat: no-repeat;
+    transition: .3s all;
+}
+.Hcon .function .icon a+a{
+    margin-left: 6px;
+}
+.Hcon .function .icon a:hover {
+    border:1px solid  #555;
+    background-color: #555;
+    background-repeat: no-repeat;
+}
+/* Facebook */
+.Hcon a.Facebook {
+    background: url(../images/fb_g.svg) center / 12px;
+}
+.Hcon a.Facebook:hover {
+    background: url(../images/fb_w.svg) center / 12px;
+}
+/* Line */
+.Hcon a.Line {
+    background: url(../images/line_g.svg) center / 23px;
+}
+.Hcon a.Line:hover {
+    background: url(../images/line_w.svg) center / 23px;
+}
+/* Twitter */
+.Hcon a.Twitter {
+    background: url(../images/twitter_g.svg) 4px center / 23px;
+}
+.Hcon a.Twitter:hover {
+    background: url(../images/twitter_w.svg) 4px center / 23px;
+}
+/* YouTube */
+.Hcon a.YouTube {
+    background: url(../images/yt_g.svg) center / 18px;
+}
+.Hcon a.YouTube:hover {
+    background: url(../images/yt_w.svg) center / 18px;
+}
+/* 我要爆料 */
+.Hcon a.Boom p {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: center;
+}
+.Hcon a.Boom:hover p {
+    color: #f7f7f7;
+}
+/* Search for PC */
+.Hcon a.iconSearch {
+    background: url(../images/search_g.svg) center / 18px;
+}
+.Hcon a.iconSearch:hover {
+    background: url(../images/search_w.svg) center / 18px;
+}
+
+/*----- 展開搜尋 for PC -----*/
+.icon .ltnsch_show {
+	width: auto;
+	display: inline-block;
+	position: absolute;
+	top: 34px;
+	right: 9px;
+	display: none;
+}
+.icon .ltnsch_show form {
+	width: auto;
+	float: right;
+	margin-left: 10px;
+}
+.ltnsch_show input {
+	width: 230px;
+	height: 32px;
+	padding-left: 10px;
+	border-radius: 20px;
+	border: 1px solid #555;
+	background-color: #f7f7f7;
+	outline: none;
+	transition: all 0.3s;
+	color: #555;
+}
+.ltnsch_show button {
+	width: 35px;
+	height: 35px;
+	border: none;
+	cursor: pointer;
+	position: absolute;
+	top: -1px;
+	right: 2px;
+	background: url(../images/search_g.svg) no-repeat center;
+	background-size: 20px;
+}
+
+/* -------------------- *\
+  行動裝置：Search & Menu
+\* -------------------- */
+@media screen and (max-width:1100px){
+    body#ltnRWD div.ltnheader .Hcon .nav_bar,
+    body#ltnRWD div.ltnheader .Hcon .ltnSearch{
+        display: block;
+        width: 50px;
+        height: 45px;
+        position: absolute;
+        top: 0px;
+        z-index: 5;
+        cursor: pointer;
+    }
+    body#ltnRWD div.ltnheader .Hcon .nav_bar {
+        background: url(../images/bt-menu.png) no-repeat center;
+        background-size: 20px;
+        right: 0;
+    }
+    body#ltnRWD div.ltnheader .Hcon .ltnSearch {
+        background: url(../images/search_g.svg) no-repeat center;
+        background-size: 20px;
+    }
+    body#ltnRWD .Hcon .function {
+        display:none;
+    }
+    body#ltnRWD div.ltnheader .useMobi .newChannel /*new動圖*/{
+        display:none;
+    }
+}
+
+/* Search 遮罩 */
+.M_LTN_Search { width:100vw; height:100vh; position:fixed; z-index:200; top:0; left:0; right:0; overflow:hidden; display:none; }
+.mobileMask { width:100vw; height:100vh; background:rgba(0,0,0,0.8); position:fixed; top:0; left:0; right:0; }
+.MSearch_con { width:100%; max-width:600px; min-width:300px; margin:0px auto; position:relative; padding:20px 0px 0px; }
+.searchltn_close { width:58px; height:58px; background:url(../images/bt-closew.png) no-repeat center; background-size:25px; position:absolute; top:0px; right:0px; cursor:pointer; }
+.searchltn_close:active { background:url(../images/close.png) no-repeat center,rgba(0,0,0,0.2); background-size:21px; }
+/* -------------------- 表單 */
+form.formSearch { margin:50px 15px 0px; }
+form.formSearch ::-webkit-input-placeholder { color:#bbb; }
+form.formSearch :-moz-placeholder { color:#bbb; }
+form.formSearch ::-moz-placeholder { color:#bbb; }
+form.formSearch :-ms-input-placeholder { color:#bbb; }
+.formSearch input[type='text'] { height:50px; width:100%; border:1px solid transparent; border-bottom:1px solid #fff; background-color:transparent; padding:0px; margin:0px auto;font-size:18px; font-family:"微軟正黑體"; font-weight:normal; line-height:1.5; color:#fff; }
+.Searchdate { width:100%; height:50px; display:table; margin:40px auto 0; }
+.Searchdate i { width:8%;  display:inline-block; color:#fff; font-size:20px; text-align:center; }
+.Searchdate input { width:45%;height:50px; display:table-cell; border:1px solid #999; padding:0px 24px 0px 8px; font-size:18px; }
+input.datepicker{ background:url(../images/arrow.png) no-repeat right center #fff; background-size:20px; }
+form.formSearch span { display:block; width:100%; color:#fff; padding:15px 0; }
+form.formSearch span b { color:#ffbf31; padding:0 0 0 5px; font-weight:100; }
+.formSearchbt { background-color:#222; border:1px solid #ffbf31; color:#ffbf31; font-size:16px; padding:10px 20px; margin:20px auto; border-radius:3px; cursor:pointer; }
+.formSearchbt:hover { background-color:#ffbf31; color:#000; }
